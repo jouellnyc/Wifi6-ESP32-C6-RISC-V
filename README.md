@@ -2,7 +2,7 @@
 
 # ESP32-C6 MicroPython WiFi 6 Development Guide
 
-- A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython, showcasing WiFi 6 capabilities and RISC-V features.
+- A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython (as of today), showcasing WiFi 6 capabilities and RISC-V features.
 
 - I bought this little guy from AliExpress (I'm sure the link will change by the time you read this):
 
