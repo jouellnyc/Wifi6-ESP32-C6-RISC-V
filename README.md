@@ -4,7 +4,7 @@
 
 - A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython (as of today), showcasing WiFi 6 capabilities and RISC-V features.
 
-- I bought this little guy from [AliExpress](https://www.google.com/search?q=alliexpress+Wifi6+ESP32+C6+RISC+V&oq=alliexpress+Wifi6+ESP32+C6+RISC+V) 
+- I bought this little guy from [AliExpress](https://www.google.com/search?q=aliexpress+Wifi+6+ESP32+C6+RISC+V&oq=aliexpress+Wifi+6+ESP32+C6+RISC+V) 
 
 <img width="510" height="518" alt="image" src="https://github.com/user-attachments/assets/8e99f96d-4102-475e-8a0e-fdba887b12dc" />
 
