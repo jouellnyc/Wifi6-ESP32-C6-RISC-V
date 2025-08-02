@@ -2,7 +2,53 @@
 
 # ESP32-C6 MicroPython WiFi 6 Development Guide
 
-A comprehensive guide for working with the ESP32-C6 development board running bleeding-edge MicroPython, showcasing WiFi 6 capabilities and RISC-V features.
+- A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython, showcasing WiFi 6 capabilities and RISC-V features.
+
+- I bought this little guy from AliExpress (I'm sure the link will change by the time you read this):
+
+<img width="510" height="518" alt="image" src="https://github.com/user-attachments/assets/8e99f96d-4102-475e-8a0e-fdba887b12dc" />
+
+It really is little - about the size of a esp32 zero. 
+
+
+## Firmware
+"The Usual" - https://micropython.org/download/ESP32_GENERIC_C6/ - e.g not a special build
+
+
+## Installing
+```
+esptool  --port /dev/ttyACM4  --baud 460800 write_flash 0 /home/john/esp32/firmware/ESP32_GENERIC_C6-20250801-v1.26.0-preview.489.gc9b52b2b7.bin
+esptool.py v4.7.0
+Serial port /dev/ttyACM4
+Connecting...
+Detecting chip type... ESP32-C6
+Chip is ESP32-C6FH4 (QFN32) (revision v0.2)
+Features: WiFi 6, BT 5, IEEE802.15.4                <<===Cool!
+Crystal is 40MHz
+MAC: fc:01:2c:ff:fe:e3:e3:f8
+BASE MAC: fc:01:2c:e3:e3:f8
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x001fafff...
+Compressed 2074624 bytes to 1280677...
+Wrote 2074624 bytes (1280677 compressed) at 0x00000000 in 5.8 seconds (effective 2852.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+
+```
+
+NOTE:
+```
+./esptool.py --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
+Warning: DEPRECATED: 'esptool.py' is deprecated. Please use 'esptool' instead. The '.py' suffix will be removed in a future major release.
+```
 
 ## Hardware Setup
 
