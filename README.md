@@ -8,7 +8,7 @@
 
 <img width="510" height="518" alt="image" src="https://github.com/user-attachments/assets/8e99f96d-4102-475e-8a0e-fdba887b12dc" />
 
-It really is little - about the size of a esp32 zero. 
+It really is little - about the size of a esp32 zero. I got it working and asked Claude to help me understand new and cool features.
 
 
 ## Firmware
@@ -232,6 +232,37 @@ for param in test_params:
 - IEEE 802.15.4/Thread support (may require custom builds)
 - Extended BLE 5.0 advertising features
 
+Thonny output:
+
+```
+test_params = ['channel', 'essid', 'hidden', 'authmode', 'password', 
+               'dhcp_hostname', 'reconnects', 'txpower', 'max_tx_power',
+               'pm', 'bandwidth', 'protocol']
+
+for param in test_params:
+    try:
+        val = sta_if.config(param)
+        print(f"{param}: {val}")
+    except ValueError:
+        pass  # Parameter not supported
+    except Exception as e:
+        print(f"{param}: Error - {e}")
+
+channel: 3
+essid: Jinxy-64B
+hidden: Error - AP required
+authmode: Error - AP required
+dhcp_hostname: mpy-esp32c6
+reconnects: -1
+txpower: 20.0
+pm: 1
+protocol: 71
+MicroPython v1.26.0-preview.489.gc9b52b2b7 on 2025-08-01; ESP32C6 module with ESP32C6
+Type "help()" for more information.
+>>> 
+
+```
+        
 ### 🔬 Experimental
 - Matter/Thread protocol support
 - Advanced WiFi 6 features (OFDMA, MU-MIMO)
