@@ -166,6 +166,15 @@ ble.active(True)
 ble.gap_advertise(100, b'\x02\x01\x06\x04\x09ESP32')
 ```
 
+### ✅ Bluetooth Scanner
+
+Being curious I wanted to see more about why my [2.4 GHZ nRF24L01 scanner](https://github.com/jouellnyc/nRF24L01) was picking up so much 'interference'.
+
+```bt_scan_ll.py``` scans for bluetooth devices. Courtesy of Claude.
+
+<img width="611" height="349" alt="image" src="https://github.com/user-attachments/assets/4a2d66b7-bbb8-40bb-864d-82d075c38119" />
+
+
 ## Protocol Analysis
 
 The `protocol: 71` value suggests WiFi 6 (802.11ax) negotiation is active. This is significantly higher than older ESP32 variants, indicating enhanced WiFi capabilities.
