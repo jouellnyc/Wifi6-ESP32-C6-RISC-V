@@ -2,24 +2,24 @@
 
 # ESP32-C6 MicroPython WiFi 6 Development Board Notes
 
-- A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython (as of today), showcasing WiFi 6 capabilities and RISC-V features.
+A short guide for working with the ESP32-C6 development board running bleeding-edge MicroPython (as of today), showcasing WiFi 6 capabilities and RISC-V features.
 
-- I bought this little guy from [AliExpress](https://www.google.com/search?q=aliexpress+Wifi+6+ESP32+C6+RISC+V&oq=aliexpress+Wifi+6+ESP32+C6+RISC+V) 
+I bought this little guy from [AliExpress](https://www.google.com/search?q=aliexpress+Wifi+6+ESP32+C6+RISC+V&oq=aliexpress+Wifi+6+ESP32+C6+RISC+V) 
 
 <img width="510" height="518" alt="image" src="https://github.com/user-attachments/assets/8e99f96d-4102-475e-8a0e-fdba887b12dc" />
 
-It really is little - about the size of a esp32 zero. I got it working and asked Claude to help me understand new and cool features.
-
+It really is little - about the size of an ESP32 Zero. I got it working and asked Claude to help me understand the new and cool features.
 
 ## Firmware
-"The Usual" location - https://micropython.org/download/ESP32_GENERIC_C6/ - e.g not a special build.
+
+"The Usual" location - https://micropython.org/download/ESP32_GENERIC_C6/ - e.g., not a special build.
 
 I am using ESP32_GENERIC_C6-20250801-v1.26.0-preview.489.gc9b52b2b7.bin here.
 
-
 ## Installing
-```
-esptool  --port /dev/ttyACM4  --baud 460800 write_flash 0 /home/john/esp32/firmware/ESP32_GENERIC_C6-20250801-v1.26.0-preview.489.gc9b52b2b7.bin
+
+```bash
+esptool --port /dev/ttyACM4 --baud 460800 write_flash 0 /home/john/esp32/firmware/ESP32_GENERIC_C6-20250801-v1.26.0-preview.489.gc9b52b2b7.bin
 esptool.py v4.7.0
 Serial port /dev/ttyACM4
 Connecting...
@@ -43,18 +43,16 @@ Hash of data verified.
 
 Leaving...
 Hard resetting via RTS pin...
-
 ```
 
-NOTE:
-```
+**NOTE:**
+```bash
 ./esptool.py --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
 Warning: DEPRECATED: 'esptool.py' is deprecated. Please use 'esptool' instead. The '.py' suffix will be removed in a future major release.
 
-$ esptool  --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
+$ esptool --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
 Command 'esptool' not found, but can be installed with:
 sudo apt install esptool
-
 ```
 
 ## Hardware Setup
@@ -168,12 +166,13 @@ ble.gap_advertise(100, b'\x02\x01\x06\x04\x09ESP32')
 
 ### ✅ Bluetooth Scanner
 
-Being curious I wanted to see more about why my [2.4 GHZ nRF24L01 scanner](https://github.com/jouellnyc/nRF24L01) was picking up so much 'interference'.
+Being curious, I wanted to see more about why my [2.4 GHz nRF24L01 scanner](https://github.com/jouellnyc/nRF24L01) was picking up so much 'interference'.
 
-```bt_scan_ll.py``` scans for bluetooth devices. Courtesy of Claude.
+`bt_scan_ll.py` scans for Bluetooth devices using low level ```bluetooth``` module. Courtesy of Claude.
 
 <img width="611" height="349" alt="image" src="https://github.com/user-attachments/assets/4a2d66b7-bbb8-40bb-864d-82d075c38119" />
 
+NOTE: This will work with a pi pico unchanged. I had trouble getting ```aioble``` to work with the ESP32-C6-RISC-V
 
 ## Protocol Analysis
 
@@ -248,7 +247,7 @@ for param in test_params:
 
 ## Development Tips
 
-1. **Use bleeding-edge builds** for latest features
+1. **Use bleeding-edge builds** for the latest features
 2. **Check parameter names** - they may differ from older ESP32 variants  
 3. **Explore available options** using `dir()` and config exploration
 4. **Monitor power consumption** - the C6 has much better power management
