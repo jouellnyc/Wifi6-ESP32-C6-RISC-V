@@ -12,7 +12,9 @@ It really is little - about the size of a esp32 zero.
 
 
 ## Firmware
-"The Usual" - https://micropython.org/download/ESP32_GENERIC_C6/ - e.g not a special build
+"The Usual" location - https://micropython.org/download/ESP32_GENERIC_C6/ - e.g not a special build.
+
+I am using ESP32_GENERIC_C6-20250801-v1.26.0-preview.489.gc9b52b2b7.bin here.
 
 
 ## Installing
