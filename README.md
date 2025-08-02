@@ -48,6 +48,11 @@ NOTE:
 ```
 ./esptool.py --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
 Warning: DEPRECATED: 'esptool.py' is deprecated. Please use 'esptool' instead. The '.py' suffix will be removed in a future major release.
+
+$ esptool  --port PORTNAME --baud 460800 write_flash 0 ESP32_BOARD_NAME-DATE-VERSION.bin
+Command 'esptool' not found, but can be installed with:
+sudo apt install esptool
+
 ```
 
 ## Hardware Setup
@@ -247,8 +252,11 @@ The ESP32-C6 hardware supports several cutting-edge features that may become ava
 - **Advanced BLE 5.0** features like extended advertising
 - **IEEE 802.15.4** integration for Zigbee compatibility
 
-## Contributing
+## References
+- https://github.com/micropython/micropython/pull/11869
+- https://github.com/orgs/micropython/discussions/13461
 
+## Contributing
 Found new working features or improvements? PRs welcome! This is an active area of development in the MicroPython ecosystem.
 
 ---
